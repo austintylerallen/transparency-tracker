@@ -1,64 +1,44 @@
-require('dotenv').config();
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
-const connectDB = require('./config/db');
+const jwt = require('jsonwebtoken');
 const typeDefs = require('./graphql/typeDefs');
 const resolvers = require('./graphql/resolvers');
-const cors = require('cors');
-const jwt = require('jsonwebtoken');
+const mongoose = require('mongoose');
+require('dotenv').config();
 
-const startServer = async () => {
-  const app = express();
+const app = express();
+const PORT = process.env.PORT || 5003;
 
-  // Connect Database
-  connectDB();
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+}).then(() => {
+  console.log('MongoDB connected...');
+}).catch(err => {
+  console.error('MongoDB connection error:', err);
+});
 
-  const corsOptions = {
-    origin: 'http://localhost:3000',
-    credentials: true,
-    methods: ['GET', 'POST', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    optionsSuccessStatus: 200, // For legacy browser support
-  };
-
-  app.use(cors(corsOptions));
-
-  const authMiddleware = (req, res, next) => {
-    const token = req.headers['authorization'];
-    console.log('Token in authMiddleware:', token);
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  context: ({ req }) => {
+    const token = req.headers.authorization || '';
     if (token) {
       try {
-        const decoded = jwt.verify(token.split(' ')[1], process.env.JWT_SECRET);
-        console.log('Decoded user:', decoded);
-        req.user = decoded;
+        const user = jwt.verify(token.split(' ')[1], process.env.JWT_SECRET);
+        return { user };
       } catch (err) {
-        console.error('Token error:', err);
+        console.error('Token verification error:', err);
       }
     }
-    next();
-  };
+    return null;
+  },
+});
 
-  app.use(express.json());
-  app.use(authMiddleware);
+server.start().then(() => {
+  server.applyMiddleware({ app });
 
-  const server = new ApolloServer({
-    typeDefs,
-    resolvers,
-    context: ({ req }) => {
-      console.log('User in context:', req.user);
-      return { user: req.user };
-    },
-  });
-
-  await server.start();
-  server.applyMiddleware({ app, cors: false });
-
-  const PORT = process.env.PORT || 5003;
   app.listen(PORT, () => {
-    console.log(`Server started on port ${PORT}${server.graphqlPath}`);
+    console.log(`Server running on http://localhost:${PORT}${server.graphqlPath}`);
   });
-};
-
-startServer().catch((error) => {
-  console.error('Failed to start server:', error);
 });

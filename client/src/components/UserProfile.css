@@ -4,7 +4,7 @@
     padding: 2rem;
     border-radius: 5px;
     width: 80%;
-    margin: auto;
+    margin: 2rem auto; /* Ensure it doesn't overlap with navbar */
     text-align: center;
   }
   
@@ -15,35 +15,66 @@
     margin-bottom: 1rem;
   }
   
-  .personal-info form {
+  .personal-info {
+    margin-top: 2rem;
+  }
+  
+  .info-section {
+    background-color: #2C3E50; /* Darker navy blue */
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    position: relative;
+    border: 1px solid #ECF0F1;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .info-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    position: relative;
   }
   
-  .personal-info label {
-    margin: 0.5rem 0;
+  .edit-button {
+    background-color: #D35400; /* Darker Matte Orange */
+    color: #ECF0F1; /* White */
+    border: none;
+    padding: 0.3rem 0.5rem;
+    cursor: pointer;
+    border-radius: 3px;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
   }
   
-  .personal-info input {
+  .edit-button:hover {
+    background-color: #A04000; /* Even Darker Matte Orange */
+  }
+  
+  .info-section input {
     padding: 0.5rem;
     border: none;
     border-radius: 3px;
-    margin: 0.5rem 0;
-    width: 80%;
+    width: 100%;
   }
   
-  .personal-info button {
+  button {
     background-color: #D35400; /* Darker Matte Orange */
     color: #ECF0F1; /* White */
     border: none;
     padding: 0.5rem 1rem;
     cursor: pointer;
     margin-top: 1rem;
+    border-radius: 5px;
   }
   
-  .personal-info button:hover {
+  button:disabled {
     background-color: #A04000; /* Even Darker Matte Orange */
+    cursor: not-allowed;
   }
   
   .activity-summary {

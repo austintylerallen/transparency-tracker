@@ -1,0 +1,46 @@
+.legislation-container {
+    background-color: #34495E; /* Slightly lighter navy blue */
+    color: #ECF0F1; /* White */
+    padding: 2rem;
+    border-radius: 5px;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .legislation-container h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .legislation-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .legislation-container li {
+    background-color: #2C3E50; /* Darker navy blue */
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 1rem 0;
+    text-align: left;
+  }
+  
+  .legislation-container h3 {
+    margin: 0 0 0.5rem 0;
+    word-wrap: break-word; /* Ensure long words break to the next line */
+  }
+  
+  .legislation-container p {
+    margin: 0.5rem 0;
+    word-wrap: break-word; /* Ensure long words break to the next line */
+  }
+  
+  .legislation-container a {
+    color: #D35400; /* Darker Matte Orange */
+    text-decoration: none;
+  }
+  
+  .legislation-container a:hover {
+    text-decoration: underline;
+  }
+  

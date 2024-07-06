@@ -1,0 +1,89 @@
+.representatives-container {
+    background-color: #34495E; /* Slightly lighter navy blue */
+    color: #ECF0F1; /* White */
+    padding: 2rem;
+    border-radius: 5px;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .representatives-container button {
+    background-color: #D35400; /* Darker Matte Orange */
+    color: #ECF0F1; /* White */
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 3px;
+    margin: 1rem 0; /* Add some space around the button */
+  }
+  
+  .representatives-container button:hover {
+    background-color: #A04000; /* Even Darker Matte Orange */
+  }
+  
+  .representatives-container form {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center; /* Center the form */
+    align-items: center;
+    gap: 1rem; /* Add some space between the input and button */
+  }
+  
+  .representatives-container input {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 3px;
+    width: 60%;
+  }
+  
+  .error-message {
+    color: #E74C3C; /* Red */
+    margin-top: 1rem;
+  }
+  
+  .representatives-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .representative-card {
+    background-color: #2C3E50; /* Darker navy blue */
+    padding: 1rem;
+    border-radius: 5px;
+    width: 300px;
+    text-align: left;
+    border: 1px solid #ECF0F1;
+    word-wrap: break-word; /* Ensure long words break to the next line */
+    overflow: hidden; /* Prevent overflow */
+  }
+  
+  .representative-card h3,
+  .representative-card p {
+    word-wrap: break-word; /* Ensure long words break to the next line */
+  }
+  
+  .pagination {
+    margin-top: 1rem;
+  }
+  
+  .pagination button {
+    background-color: #2C3E50; /* Darker navy blue */
+    color: #ECF0F1; /* White */
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 3px;
+    margin: 0 0.25rem;
+  }
+  
+  .pagination button.active-page {
+    background-color: #D35400; /* Darker Matte Orange */
+  }
+  
+  .pagination button:hover {
+    background-color: #A04000; /* Even Darker Matte Orange */
+  }
+  
