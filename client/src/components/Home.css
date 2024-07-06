@@ -1,0 +1,65 @@
+.home-container {
+    text-align: center;
+    padding-top: 10%;
+  }
+  
+  .welcome-message {
+    font-size: 2rem;
+    animation: fadeInOut 3s forwards;
+  }
+  
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  .login-form {
+    animation: fadeIn 1s forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  input {
+    display: block;
+    width: 80%;
+    margin: 1rem auto;
+    padding: 0.5rem;
+  }
+  
+  button {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: white;
+    color: orange;
+  }
+  
+  .login-container, .register-container {
+    background-color: navy;
+    color: white;
+    padding: 2rem;
+    border-radius: 5px;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+  }
+  

@@ -1,0 +1,47 @@
+.login-container {
+    background-color: #2C3E50; /* Navy Blue */
+    color: #ECF0F1; /* White */
+    padding: 2rem;
+    border-radius: 5px;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    animation: fadeIn 1s forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  input {
+    display: block;
+    width: 80%;
+    margin: 1rem auto;
+    padding: 0.5rem;
+    background-color: #34495E; /* Slightly lighter navy blue */
+    border: none;
+    color: #ECF0F1; /* White */
+  }
+  
+  input::placeholder {
+    color: #BDC3C7; /* Light grey for placeholder text */
+  }
+  
+  button {
+    background-color: #D35400; /* Darker Matte Orange */
+    color: #ECF0F1; /* White */
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+  
+  button:hover {
+    background-color: #A04000; /* Even Darker Matte Orange */
+  }
+  
