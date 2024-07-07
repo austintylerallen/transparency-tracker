@@ -108,3 +108,10 @@ button:hover {
   margin: auto;
   text-align: center;
 }
+
+/* Add styles for loading and error states */
+.loading, .error {
+  text-align: center;
+  margin: 20px;
+  color: red;
+}

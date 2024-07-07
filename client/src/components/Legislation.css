@@ -1,6 +1,6 @@
 .legislation-container {
-    background-color: #34495E; /* Slightly lighter navy blue */
-    color: #ECF0F1; /* White */
+    background-color: #34495E;
+    color: #ECF0F1;
     padding: 2rem;
     border-radius: 5px;
     width: 80%;
@@ -8,39 +8,34 @@
     text-align: center;
   }
   
-  .legislation-container h2 {
-    margin-bottom: 1rem;
-  }
-  
-  .legislation-container ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .legislation-container li {
-    background-color: #2C3E50; /* Darker navy blue */
+  .bill-card {
+    background-color: #2C3E50;
     padding: 1rem;
     border-radius: 5px;
-    margin: 1rem 0;
+    margin-bottom: 1rem;
     text-align: left;
+    border: 1px solid #ECF0F1;
   }
   
-  .legislation-container h3 {
-    margin: 0 0 0.5rem 0;
-    word-wrap: break-word; /* Ensure long words break to the next line */
+  .pagination {
+    margin-top: 1rem;
   }
   
-  .legislation-container p {
-    margin: 0.5rem 0;
-    word-wrap: break-word; /* Ensure long words break to the next line */
+  .pagination button {
+    background-color: #2C3E50;
+    color: #ECF0F1;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 3px;
+    margin: 0 0.25rem;
   }
   
-  .legislation-container a {
-    color: #D35400; /* Darker Matte Orange */
-    text-decoration: none;
+  .pagination button.active-page {
+    background-color: #D35400;
   }
   
-  .legislation-container a:hover {
-    text-decoration: underline;
+  .pagination button:hover {
+    background-color: #A04000;
   }
   
